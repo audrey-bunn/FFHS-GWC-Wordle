@@ -1,23 +1,54 @@
 html {
   height: 100%;
   width: 100%;
+  background-color: #AFCAE0
 }
 
 .box {
     background-color: #ffffff;
     border-style: solid;
-    border-color: black;
+    border-color: #CDE0F0;
     border-width: 1px;
     align-items: center;
     text-align: center; 
     margin: 2px;
     padding: 10px 0;
     width:50px;
-    hight:50px;
+    
 }
 
 .rowdiv {
+    height: 50px;
+    margin: auto;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    text-align: center;
     align-items: center;
-    hight: 100px,
+}
+
+.key{
+    border-style: solid;
+    border-color: #CDE0F0;
+    border-width: 1px;
+    width: 30px;
+    margin: 1;
+    text-align: center;
+   
+}
+
+.difkey{
+    border-style: solid;
+    border-color: #CDE0F0;
+    border-width: 1px;
+    width: 50px;
+    margin: 1;
+    
+}
+
+.keyrow{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
