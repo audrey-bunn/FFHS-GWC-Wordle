@@ -1,23 +1,31 @@
+//Back End - Initializes server, generates words, and passes them to front end
 function initialize() {
-  const express = require('express');//Set up the express module
+  //Initialize Express framework/ Node server
+  const express = require('express');
   const app = express();
   const router = express.Router();
-  const path = require('path')//Include the Path module
-
-  //set up the Express server to listen on port 3000 and logs some messages when the server is ready
-  app.use(express.static('public'));
-  let server = app.listen(3000, function() {
-    console.log("App server is running on port 3000");
-  });
+  const port = 3000;
+  const path = require('path')
+  //Alow Cors policy to communicate from server to front end
+  const cors = require('cors');
+  app.use(cors());
 
   app.use(express.static('public'));
   app.use('/static', express.static('public'));
 
+
+  //Send word list
+  app.get('/words', (req, res) => {
   //Initialize word list
     m = require('./module');
-    var wordList = m.generateWordList();
-    console.log(wordList);
+    res.json(m.generateWordList());
+  });
+  
 
+  //Start server on port 3000 and log that its running
+    let server = app.listen(port, function() {
+    console.log("App server is running on port 3000");
+  });
 }
 
 
